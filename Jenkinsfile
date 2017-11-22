@@ -17,7 +17,7 @@ pipeline {
     }
     stage('send issue to Jira') {
       steps {
-        jiraComment(issueKey: 'INTBAJAU-1', body: 'ini info ')
+        jiraNewIssue(issue: 'testing', auditLog: true, failOnError: true, site: '192.168.99.100:32768')
       }
     }
   }
