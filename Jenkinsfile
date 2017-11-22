@@ -4,7 +4,6 @@ pipeline {
     stage('Development') {
       steps {
         echo 'hello world'
-        sh 'cat /etc/passwd'
       }
     }
   }
