@@ -2,8 +2,17 @@ pipeline {
   agent none
   stages {
     stage('Development') {
-      steps {
-        echo 'hello world'
+      parallel {
+        stage('Development') {
+          steps {
+            echo 'hello world'
+          }
+        }
+        stage('trigger commit') {
+          steps {
+            acceptGitLabMR(mergeCommitMessage: 'commit')
+          }
+        }
       }
     }
   }
