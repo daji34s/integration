@@ -15,5 +15,10 @@ pipeline {
         }
       }
     }
+    stage('send issue to Jira') {
+      steps {
+        jiraComment(issueKey: 'INTBAJAU-1', body: 'ini info ')
+      }
+    }
   }
 }
